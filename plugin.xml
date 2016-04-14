@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.apache.cordova.ios.shell-exec" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>Exec</name>
+  <description>Apache Cordova Execute Shell Command Plugin For ios</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,exec,runtime,process,shell,command</keywords>
+  <js-module name="shell-exec" src="www/shell-exec.js">
+    <clobbers target="shell-exec"/>
+  </js-module>
+  <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ShellExec">
+                <param name="ios-package" value="ShellExec"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/nstask/NSTask.h" />
+        <header-file src="src/ios/ShellExec.h" />
+        <source-file src="src/ios/ShellExec.m" />
+    </platform>
+</plugin>
